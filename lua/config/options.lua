@@ -7,3 +7,6 @@ vim.g.autoformat = false
 
 -- show 'invisible' characters
 vim.opt.listchars = "trail:·,tab:»»,nbsp:_"
+
+-- Disable links, markups, and etc from being hidden
+vim.o.conceallevel = 0
