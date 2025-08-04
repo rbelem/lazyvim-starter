@@ -7,9 +7,9 @@ return {
       mappings = {
         set = "m",
         set_next = "<leader>m,",
-        toggle = "<leader>m;",
-        next = "<leader>m]",
-        prev = "<leader>m[",
+        toggle = "<leader>mm",
+        next = "<leader>mn",
+        prev = "<leader>mp",
         preview = "<leader>m:",
         next_bookmark = "<leader>m}",
         prev_bookmark = "<leader>m{",
