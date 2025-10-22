@@ -8,5 +8,7 @@ vim.g.autoformat = false
 -- show 'invisible' characters
 vim.opt.listchars = "trail:·,tab:»»,nbsp:_"
 
+vim.diagnostic.config({ virtual_text = { current_line = true }})
+
 -- Disable links, markups, and etc from being hidden
 vim.o.conceallevel = 0
