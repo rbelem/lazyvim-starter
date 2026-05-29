@@ -18,9 +18,9 @@ return {
   lazy = true,
   event = { "BufReadPre", "BufNewFile" },
   opts = {
-    -- "sync" (default): blocks until env is ready, LSP sees correct PATH
-    -- "async": non-blocking, LSP may not see devbox PATH on first run
-    strategy = "sync",
+    -- "async" (default): never blocks. disk cache makes it instant on repeat.
+    -- "sync": blocks until env ready, only useful on cold cache.
+    strategy = "async",
     silent = false,
     auto_activate = true,
     devbox_path = "devbox",
