@@ -1,12 +1,11 @@
 -- devbox.nvim -- LazyVim plugin spec
 --
 -- Minimal usage (defaults are enough):
---   { "devbox-nvim", dir = "~/.config/nvim/lua/devbox" }
+--   { "rbelem/devbox.nvim" }
 --
 -- Advanced customization:
 --   {
---     "devbox-nvim",
---     dir = "~/.config/nvim/lua/devbox",
+--     "rbelem/devbox.nvim",
 --     opts = {
 --       silent = true,
 --       exclude_env = { "^ATUIN_", "^SECRET_" },
@@ -15,8 +14,7 @@
 --   }
 
 return {
-  "devbox-nvim",
-  dir = "/home/rodrigob/.config/nvim/lua/devbox",
+  "rbelem/devbox.nvim",
   lazy = true,
   event = { "BufReadPre", "BufNewFile" },
   opts = {
