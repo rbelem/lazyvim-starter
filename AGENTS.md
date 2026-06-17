@@ -19,7 +19,6 @@ init.lua → lua/config/lazy.lua
 | `lua/config/keymaps.lua` | User keymaps (terminal, etc.) |
 | `lua/config/autocmds.lua` | User autocmds |
 | `lua/plugins/*.lua` | Plugin specs — each file is a lazy.nvim spec |
-| `lua/devbox/` | Local plugin (dir-based, no external source) |
 | `lazyvim.json` | Enabled LazyVim extras |
 | `stylua.toml` | Formatter: 2-space indent, 120 col width |
 
@@ -27,19 +26,15 @@ init.lua → lua/config/lazy.lua
 
 - Every file in `lua/plugins/` returns a lazy.nvim spec (table or `{...}`).
 - `if true then return {} end` at the top **disables** the plugin (example.lua, codecompanion.lua, minuet-ai.lua).
-- Local plugins use `dir = "/absolute/path"` (e.g., devbox).
 - Override LazyVim's defaults by creating a spec with the same plugin name and `opts =` (lazy.nvim merges).
 - The `example.lua` file is a reference: it is guarded and shows all override patterns.
 
-## Devbox plugin (`lua/devbox/`)
+## Devbox plugin
 
-- Local plugin: `"devbox-nvim"`, `dir = "/home/rodrigob/.config/nvim/lua/devbox"`.
+- GitHub dep: `rbelem/devbox.nvim` (spec at `lua/plugins/devbox.lua`).
 - Detects `devbox.json` in project roots, runs `devbox shellenv`, injects env vars into `vim.env`.
-- Sync by default (blocks until env ready) — essential for LSP (jdtls needs `mvn` on PATH).
-- Async optional via `opts = { strategy = "async" }`.
-- Caches env per project for the session (cold ~250ms, cached ~0.4ms).
 - Commands: `:DevboxActivate`, `:DevboxDeactivate`, `:DevboxStatus`, `:DevboxClearCache`.
-- LSP injection hook: on LspAttach, prepends devbox PATH to `client.config.cmd_env`.
+- See [plugin docs](https://github.com/rbelem/devbox.nvim) for full options.
 
 ## OpenCode config (`lua/plugins/extras/ai/opencode.lua`)
 
